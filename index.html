@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="animado">Examen m9 uf2 - Animaciones</h1>
+      <h1 class="intro">Examen m9 uf2 - Animaciones</h1>
 
       <div class="container-wrapper">
         <div class="container-einstein">
@@ -71,31 +71,5 @@
    
 
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const elementos = document.querySelectorAll(".animado");
-
-        const opciones = {
-          root: null, 
-          rootMargin: "0px",
-          threshold: 0.1, 
-        };
-
-        const callback = (entradas, observador) => {
-          entradas.forEach((entrada) => {
-            if (entrada.isIntersecting) {
-              entrada.target.classList.add("visible");
-              observador.unobserve(entrada.target); 
-            }
-          });
-        };
-
-        const observer = new IntersectionObserver(callback, opciones);
-
-        elementos.forEach((elemento) => {
-          observer.observe(elemento);
-        });
-      });
-    </script>
   </body>
 </html>
